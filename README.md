@@ -7,4 +7,4 @@ original page: https://github.com/lifthrasiir/qr.js
 
 
 # Demo
-View it on: Shouyin.github.io/tt/timetable.html
+View it on: https://Shouyin.github.io/tt/timetable.html
