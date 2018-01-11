@@ -70,17 +70,6 @@ var kindIndexBoxMarginLeft = 3;
 var kindNameBoxMaxWidth = 80;
 var kindNameBoxMinWidth = 15;
 
-
-var tmpCourses = {
-                       "CLAS 20008": {
-                           "p": [[4],[4,0,7],[4]],
-                           "u": [[7],[7]]
-                       },
-                        "TEST 20007": {
-                            "d": [[6],[6,1,9],[5]]
-                        }
-}
-
 var stdbyListIndex = 0;
 
 
@@ -482,7 +471,7 @@ var openControlWindow = function(tab){
         icexportimage.style.display = "block";
         /*eiqrcodeimg.src = QRCode.generatePNG(JSON.stringify(exportTimetableToJsonObj()));*/
        eiqrcodesvg.innerHTML = "";
-        let stringForQrcode = location.host + location.pathname + "?att=" + encodeURI(JSON.stringify(tObjects.exportAllToJsonObj())) + ";";
+        let stringForQrcode = location.host + location.pathname + "?att=" + encodeURI(JSON.stringify(tObjects.exportAllToJsonObj()) + "&");
         
         eiqrcodesvg.appendChild(QRCode.generateSVG(stringForQrcode));
 
@@ -668,7 +657,7 @@ var checkOnLoad = function(){
     paramString = decodeURI(paramString);
     let startIndex = paramString.indexOf("att=");
     if(startIndex >= 0){
-        let endIndex = paramString.indexOf(";");
+        let endIndex = paramString.indexOf("&");
         if (endIndex >= 0){
             try{
                 let exportedJsonObj = JSON.parse(paramString.slice(startIndex + 4, endIndex));
