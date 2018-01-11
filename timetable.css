@@ -263,10 +263,11 @@ li.controlbutton h3{
 }
 
 a.cedit{
+    display: none;
     position: absolute;
     text-decoration: none;
-    color: dodgerblue;
-    right: 35px;
+    color: rgb(109, 109, 109);
+    left: 25px;
     top: 5px;
 }
 
